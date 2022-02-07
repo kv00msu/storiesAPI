@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5" xmlns:th="http://thymeleaf.org">
+<title >Главная</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div  sec:authorize="!isAuthenticated()">
+    <h1>Конвертер валют</h1>
+    <h4><a href="/login">Войти</a></h4>
+    <h4><a href="/registration">Зарегистрироваться</a></h4>
+</div>
+<div sec:authorize="isAuthenticated()">
+    <h1>Конвертер</h1>
+    <h4><a href="/stories">Истории</a></h4>
+    <h4><a href="/admin">Для админа</a></h4>
+    <h4><a href="/logout">Выйти</a></h4>
+</div>
+</body>
+</html>
